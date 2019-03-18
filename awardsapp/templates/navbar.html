@@ -1,0 +1,110 @@
+{% load static %}
+<style media="screen">
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  li {
+    float: right;
+  }
+
+  li a {
+    display: block;
+    color: #ca9e30;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+  }
+
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    text-decoration: none;
+    color: #000000;
+  }
+
+.btn-success {
+      background: #ca9e30;
+      color: #ffffff;
+      padding: 14px 24px;
+      border: 0 none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+  }
+
+.btn-success:hover{
+background: #ca9e33;
+color: #ffffff;
+padding: 14px 24px;
+border: 0 none;
+font-weight: 700;
+letter-spacing: 1px;
+text-decoration: none;
+}
+
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Charmonman|Kodchasan|Dancing+Script|Spirax" rel="stylesheet">
+
+<nav class="navbar bg-light ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{% url 'homePage' %}"><img src="{% static 'photos/Elevation.png' %}" style="width: 200px;"></a>
+
+    </div>
+    <div>
+        </div>
+    <div class="col-sm-6 col-md-6">
+      {% if user.is_authenticated %}
+      <ul>
+      <li style="font-family: 'Dosis', sans-serif;">
+        <a href="{%url 'edit_profile'%}">Edit Profile</a>
+      </li>
+
+      <li style="font-family: 'Dosis', sans-serif;">
+        <a href="{% url 'individual_profile_page' user.id %}">My Profile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+      </li>
+                   <li style="font-family: 'Dosis', sans-serif;">
+                    <a href="{%url 'new_project'%}"> Submit Your Project &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                  </li>
+      <li style="font-family: 'Dosis', sans-serif;">
+        <a href="/accounts/password/change">Change Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+      </li>
+
+      <li style="font-family: 'Dosis', sans-serif;">
+        <a href="/logout">Logout &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+      </li>
+      </ul>
+
+      {% else %}
+      <ul>
+      <li style="font-family: 'Dosis', sans-serif;">
+        <a class='btn btn-default' href="/accounts/login">Login &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+      </li>
+
+      <li style="font-family: 'Dosis', sans-serif;">
+        <a class='btn btn-default' href="/accounts/register">Register &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+      </li>
+      </ul>
+
+{% endif %}
+<form class="navbar-form" role="search" action="{% url 'search_projects' %}">
+
+  <div class="input-group">
+    <input type="text" style="font-family: 'Dosis', sans-serif;" class="form-control mr-sm-4" placeholder="Search Project" name="project">
+    <div class="input-group-btn">
+      <button class="btn btn-outline-primary my-2 my-sm-0" style="font-family: 'Dosis', sans-serif;" type="submit">Find</button>
+    </div>
+  </div>
+
+
+</form>
+    </div>
+
+
+
+  </div>
+</nav>
