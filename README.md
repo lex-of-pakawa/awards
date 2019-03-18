@@ -1,6 +1,6 @@
-# Instagram Clone
+# Awards
 
-This is a clone of the popular App Instagram, 11/03/2019
+A web application where developers can submit their projects and have their peers review these projects. Projects are reviewed based on usability, design and content.
 
 ## Author
 
@@ -10,18 +10,22 @@ Alex Ogola
 
 #### This application allows its users to do the following
 
-* Sign in to the application to start using.
-* Upload my pictures to the application.
-* See my profile with all my pictures.
-* Follow other users and see their pictures on my timeline.
-* Like a picture and leave a comment on it.
+* View posted projects and their details.
+* Post a project to be rated/reviewed.
+* Rate/review other users' projects.
+* Search for projects.
+* View projects overall score.
+* View my profile page Projects will be rated/reviewed based on the following criteria.
+* Design - This is the overall appearance of the project.
+* Usability - This can be translated to the user experience and how responsive the project is.
+* Content - This includes the technologies used.
 
 
 ## Prerequisites
 * Python3.6
 
 ## Installation steps
-* $ git clone https://github.com/lex-of-pakawa/instagram
+* $ git clone https://github.com/lex-of-pakawa/awards
 * $ cd gallery
 * $ source virtual/bin/activate
 * Install all the necessary requirements by running pip install -r requirements.txt (Python 3).
@@ -30,13 +34,13 @@ Alex Ogola
 
 * psql
 * CREATE DATABASE gallery
-* connect to the database \c instagram
+* connect to the database \c awards
 * check if tables have been created \dt
 
 ## Run migrations
 
 * python3.6 manage.py migrate
-* python3.6 manage.py makemigrations instagram
+* python3.6 manage.py makemigrations awards
 
 ## Running the app
 
@@ -44,7 +48,7 @@ Alex Ogola
 
 ## testing
 
-* python3.6 manage.py test instagram
+* python3.6 manage.py test awards
 
 
 ## Technologies Used
