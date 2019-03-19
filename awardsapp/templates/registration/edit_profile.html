@@ -1,19 +1,7 @@
 {%extends "registration/base.html"%} {% load bootstrap4 %} {%load static%} {% load staticfiles %} {% block content %}
 
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Edit Your Profile Information</title>
-  {{form.media}}
-
-{% block styles %} {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
-
-</head>
-
-<body>
+<div style="background-image: url('{% static 'photos/background-2.jpeg' %}'); height: 400px; margin-bottom: 4%;"></div>
 <div class="container" style="background-color:#fff;">
 
      <div class="row">
@@ -36,7 +24,4 @@
 </div>
 
 
-
-
-</body>
 {% endblock %}

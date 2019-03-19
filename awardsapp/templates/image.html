@@ -1,15 +1,8 @@
 {% extends 'base.html' %} {% load static %} {% load bootstrap4%} {% block content %}
 <link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Kodchasan|Spirax|Abril+Fatface" rel="stylesheet">
 
-<div class="container">
 
-  <div class="jumbotron text-center" style="background-color:white;">
-
-    <h1 class="h1" style="font-family: 'Dosis', cursive; color: #ca9e30; font-size:70px;">Awards</h1>
-
-
-  </div>
-</div>
+<div style="background-image: url('{{project.project_image.url}}'); height: 600px; background-size: cover; margin-bottom: 5%;"></div>
 
 <div class="container">
 <div class="row">
@@ -17,10 +10,10 @@
     <div class="card mb-3">
     <img class="card-img-top" src="{{project.project_image.url}}" alt="Card image cap" class="img-fluid">
     <div class="card-body">
-      <h5 class="card-title" style="font-family: 'Dosis', sans-serif;"><strong>Project Name:</strong>
+      <h5 class="card-title" style="font-family: 'Dancing Script', cursive;"><strong>Project Name:</strong>
         <br>
         {{project.title}}</h5>
-      <p class="card-text" style="font-family: 'Dosis', sans-serif;"><strong>Description Of Project:</strong>
+      <p class="card-text" style="font-family: 'Dancing Script', cursive;"><strong>Description Of Project:</strong>
         <br>
         {{project.description}}</p>
     </div>
@@ -29,7 +22,7 @@
   <div class="col-md-6">
     <div class="card border-secondary">
       <div class="card-header">
-        <h5 style="font-family: 'Dosis', sans-serif;"> Comments</h5>
+        <h5 style="font-family: 'Dancing Script', cursive;"> Comments</h5>
       </div>
 
 
@@ -46,14 +39,14 @@
 
         {% endfor %}
 
-        <h1 style="color:black;font-family: 'Dosis', sans-serif;">AVERAGE OF REVIEWS</h1>
+        <h1 style="color:black;font-family: 'Dancing Script', cursive;">AVERAGE OF REVIEWS</h1>
 
 
         <h5 style="font-family: 'Dosis',sans-serif; color: #ca9e30;">{{ project.reviews.count }} reviews ({{ project.average_design | floatformat }} average rating of design)</h5>
         <h5 style="font-family: 'Dosis',sans-serif; color: #ca9e30;">{{ project.reviews.count }} reviews ({{ project.average_content | floatformat }} average rating of content)</h5>
         <h5 style="font-family: 'Dosis',sans-serif; color: #ca9e30;">{{ project.reviews.count }} reviews ({{ project.average_usability | floatformat }} average rating of usability)</h5>
 
-        <h3 style="font-family: 'Dosis', sans-serif; color: #ca9e30;">Add your comment</h3>
+        <h3 style="font-family: 'Dancing Script', cursive; color: #ca9e30;">Add your comment</h3>
         <hr>
         <form action="" method="post" style="font-family: 'Dosis',sans-serif;">
           {%csrf_token%} {% bootstrap_form form %}
