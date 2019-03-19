@@ -33,7 +33,7 @@ Alex Ogola
 ## create a database
 
 * psql
-* CREATE DATABASE gallery
+* CREATE DATABASE awards
 * connect to the database \c awards
 * check if tables have been created \dt
 
