@@ -4,17 +4,15 @@
 {% block content %}
 <link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Kodchasan|Spirax|Abril+Fatface" rel="stylesheet">
 
-<div class="container">
+<div style="background-image: url('{% static 'photos/background-1.jpg' %}'); height: 300px;">
 
-  <div class="jumbotron text-center mb-0" id="jumbo" style="background-color:white;">
 
-    <h1 class="h1" style="font-family: 'Dosis', cursive; color:#ca9e30; font-size:70px;">Awards</h1>
-    <p class="h1" style="font-family: 'Dosis', cursive; color:black;font-size:25px;">View projects, submit your own projects and have them reviewed.</p>
-  </div>
+
 </div>
 
 
 <div class="jumbotron itson mb-3 ">
+  <p class="h1" style="font-family: 'Dosis', cursive; color:black;font-size:25px; text-align: center; margin-bottom: 5%;">View projects, submit your own projects and have them reviewed.</p>
 
   <div class="card-deck flex-wrap">
     {% for project in projects %}
@@ -24,25 +22,42 @@
           id="eachimage1" size="100px200"></a>
       <p style="font-family: 'Dosis', sans-serif; text-align:center;"> {{ project.description}}</p>
      <p style="font-family: 'Dosis', sans-serif; text-align:center;"> {{ project.user.username}}</p>
-     <span class="badge badge-pill badge-info" style="font-family: 'Dosis', sans-serif;">
-       <a href="{{ project.project_url}}">Visit Site</a></span>
-  <span class="badge badge-pill badge-warning" style="font-family: 'Dosis', sans-serif; text-align:center;"><a href="{% url 'project' project.id %}">View Project</a></span>
+     <div style="display: inline; text-align: center; padding-bottom: 3%;">
+
+       <button type="button" class="btn btn-success btn-sm"><a href="{{ project.project_url}}" style="color: #ffffff; text-decoration: none;">&nbsp;&nbsp;Visit Site&nbsp;&nbsp;</a></button>
+       <button type="button" class="btn btn-success btn-sm"><a href="{% url 'project' project.id %}" style="color: #ffffff; text-decoration: none;">View Project</a></button>
+
+     </div>
 
     </div>
     {% endfor %}
   </div>
 
+  <div class="container" style="margin-top: 4%;">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4" style="border: 2px solid #ca9e30;">
+
+        <div style="padding: 8%;">
+
+          <form action="{%url 'homePage'%}" method="post">
+            {%csrf_token%} {% bootstrap_form letterForm %}
+            <input type="submit" class="btn btn-success btn-sm" value="Subscribe">
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4"></div>
+
+    </div>
+
+  </div>
+
 
 </div>
 
-<div class="jumbotron text-center mt-3" style="background-color:white;font-family: 'Dosis', sans-serif;">
-
-  <form action="{%url 'homePage'%}" method="post">
-    {%csrf_token%} {% bootstrap_form letterForm %}
-    <input type="submit" style="background-color:white;" value="Subscribe To Awards ">
-  </form>
-
-</div>
 
 
 {% endblock %} {% block scripts %} {{block.super}}
