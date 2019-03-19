@@ -20,7 +20,7 @@
           <form action="/accounts/register/" method="post" style="font-family: 'Dosis', cursive;">
             {% csrf_token %} {% bootstrap_form form %}
             <div class="form-group">
-              <input type="submit" class="btn btn-success btn-sm" value="Sign Up">
+              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
             </div>
 
             <input type="hidden" name="next" value="{{next}}">
@@ -42,7 +42,7 @@
         <div class="card-body text-center">
           <h5 class="card-title" style="font-family: 'Dancing Script', cursive;">Have an account already?</h5>
           <h2 style="color:grey;font-size:20px;font-family: 'Dancing Script', cursive;">By signing up, you agree to our Terms, Data Policy and Cookies Policy.</h2>
-          <a href="/accounts/login" class="btn btn-success" style="font-family: 'Dosis', cursive;">Login</a>
+          <a href="/accounts/login" class="btn btn-primary" style="font-family: 'Dosis', cursive;">Login</a>
         </div>
       </div>
 

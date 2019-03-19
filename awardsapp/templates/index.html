@@ -24,8 +24,8 @@
      <p style="font-family: 'Dancing Script', cursive; text-align:center;"> {{ project.user.username}}</p>
      <div style="display: inline; text-align: center; padding-bottom: 3%;">
 
-       <button type="button" class="btn btn-success btn-sm"><a href="{{ project.project_url}}" style="color: #ca9e30; text-decoration: none;">&nbsp;&nbsp;Visit Site&nbsp;&nbsp;</a></button>
-       <button type="button" class="btn btn-success btn-sm"><a href="{% url 'project' project.id %}" style="color: #ca9e30; text-decoration: none;">View Project</a></button>
+       <button type="button" class="btn btn-primary btn-sm"><a href="{{ project.project_url}}" style="color: #ca9e30; text-decoration: none;">&nbsp;&nbsp;Visit Site&nbsp;&nbsp;</a></button>
+       <button type="button" class="btn btn-primary btn-sm"><a href="{% url 'project' project.id %}" style="color: #ca9e30; text-decoration: none;">View Project</a></button>
 
      </div>
 
@@ -42,7 +42,7 @@
 
           <form action="{%url 'homePage'%}" method="post">
             {%csrf_token%} {% bootstrap_form letterForm %}
-            <input type="submit" class="btn btn-success btn-sm" value="Subscribe">
+            <input type="submit" class="btn btn-primary btn-sm" value="Subscribe">
           </form>
 
         </div>
